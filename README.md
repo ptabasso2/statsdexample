@@ -20,7 +20,7 @@ COMP10619:pejman.tabassomi$ ./gradlew build
 
 ### _Run the tests_
 
-Open a new terminal window and run the following command **multiple times**:
+Open a new terminal window and run the following command:
 
 ```
 COMP10619:Kafka pejman.tabassomi$ java -jar build/libs/statsdexample-1.0-SNAPSHOT.jar
