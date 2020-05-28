@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-
+        // Instantiate a StatsDClient object
         StatsDClient Statsd = new NonBlockingStatsDClientBuilder()
                 .prefix("statsd")
                 .hostname("localhost")
