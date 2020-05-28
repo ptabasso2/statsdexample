@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'application'
+    id "com.github.johnrengelman.shadow" version "5.2.0"
+}
+
+group 'com.datadog.pej.dogstatsd'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+
+ext {
+    javaMainClass = "Main"
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class':'Main'
+    }
+}
+
+shadowJar {
+    archiveFileName = "statsdexample-${version}.jar"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'com.datadoghq', name: 'java-dogstatsd-client', version: '2.10.1'}
