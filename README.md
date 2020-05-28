@@ -5,6 +5,17 @@
 A very basic example of DogStatsD usage with Java. This assumes the following prerequsites: 
 + You already have a JDK installed (ex: OpenJDK 11)
 + You already have a Datadog agent running.
+
+```
+COMP10619:pejman.tabassomi$ DOCKER_CONTENT_TRUST=1 docker run -d --rm --name datadog_agent \
+-h datadog -v /var/run/docker.sock:/var/run/docker.sock:ro -v /proc/:/host/proc/:ro \
+-v /sys/fs/cgroup/:/host/sys/fs/cgroup:ro \
+-p 8126:8126 -p 8125:8125/udp -e DD_API_KEY=cd741bcfa9ea6f113041444ff4ba6174 -e DD_APM_ENABLED=true \
+-e DD_APM_NON_LOCAL_TRAFFIC=true -e DD_PROCESS_AGENT_ENABLED=true -e DD_DOGSTATSD_NON_LOCAL_TRAFFIC="true" \
+-e DD_LOG_LEVEL=debug datadog/agent:7
+```
+
+	
   
 
 ### _Preliminary tasks_
